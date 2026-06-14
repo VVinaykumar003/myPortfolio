@@ -4,28 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/8cba78fbff.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+   <style type="text/tailwindcss">
+      @theme {
+        --color-primary: #ff004f;
+        --color-bg-dark: #080808;
+        --color-bg-light: #262626;
+        --color-text-gray: #ababab;
+      }
+      .active-link::after { width: 50% !important; }
+      .active-tab { display: block !important; }
+      .tab-contents { display: none; }
+    </style>
 </head>
-<body>
-  <div id="header">
-    <div class="container">
-      <nav>
-        <img src="logo copy.png" class="logo">
+<body class="bg-bg-dark text-white font-['Poppins',sans-serif] scroll-smooth">
+  <div id="header" class="w-full h-screen bg-[url('phone-background.jpg')] sm:bg-[url('background.jpg')] bg-cover bg-center">
+    <div class="container px-4 md:px-[10%] mx-auto">
+      <nav class="flex items-center justify-between flex-wrap py-5">
+        <img src="logo copy.png" class="w-[150px]">
 
-        <ul id="sidemenu">
-          <li><a href ="#header">Home</a></li>
-          <li><a href ="#about">About</a></li>
-          <li><a href ="#service">Service</a></li>
-          <li><a href ="#Portfolio">Portfolio</a></li>
-          <li><a href ="#contact">Contact</a></li>
-          <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+        <ul id="sidemenu" class="fixed top-0 -right-[200px] w-[200px] h-screen bg-primary pt-12 z-50 transition-all duration-500 sm:static sm:bg-transparent sm:w-auto sm:h-auto sm:p-0 sm:flex sm:flex-row">
+          <li class="block sm:inline-block m-6 sm:m-0 sm:mx-5"><a href ="#header" class="text-white text-lg relative no-underline after:content-[''] after:w-0 after:h-[3px] after:bg-primary after:absolute after:left-0 after:-bottom-[6px] after:transition-all after:duration-500 hover:after:w-full">Home</a></li>
+          <li class="block sm:inline-block m-6 sm:m-0 sm:mx-5"><a href ="#about" class="text-white text-lg relative no-underline after:content-[''] after:w-0 after:h-[3px] after:bg-primary after:absolute after:left-0 after:-bottom-[6px] after:transition-all after:duration-500 hover:after:w-full">About</a></li>
+          <li class="block sm:inline-block m-6 sm:m-0 sm:mx-5"><a href ="#service" class="text-white text-lg relative no-underline after:content-[''] after:w-0 after:h-[3px] after:bg-primary after:absolute after:left-0 after:-bottom-[6px] after:transition-all after:duration-500 hover:after:w-full">Service</a></li>
+          <li class="block sm:inline-block m-6 sm:m-0 sm:mx-5"><a href ="#Portfolio" class="text-white text-lg relative no-underline after:content-[''] after:w-0 after:h-[3px] after:bg-primary after:absolute after:left-0 after:-bottom-[6px] after:transition-all after:duration-500 hover:after:w-full">Portfolio</a></li>
+          <li class="block sm:inline-block m-6 sm:m-0 sm:mx-5"><a href ="#contact" class="text-white text-lg relative no-underline after:content-[''] after:w-0 after:h-[3px] after:bg-primary after:absolute after:left-0 after:-bottom-[6px] after:transition-all after:duration-500 hover:after:w-full">Contact</a></li>
+          <i class="fa-solid fa-xmark absolute top-6 left-6 text-2xl cursor-pointer sm:!hidden" onclick="closemenu()"></i>
         </ul>
-        <i class="fa-solid fa-bars"  onclick="openmenu()"></i>
+        <i class="fa-solid fa-bars block text-2xl cursor-pointer sm:!hidden" onclick="openmenu()"></i>
       </nav>
-      <div class="header-text">
-<p>UI/UX Designer</p>
-<h1>Hi,I am <span> Vinay kumar </span> <br>  From Bhilai</h1>
+      <div class="mt-[100%] sm:mt-[20%] text-base sm:text-3xl">
+        <p>UI/UX Designer</p>
+        <h1 class="text-3xl sm:text-6xl mt-5">Hi,I am <span class="text-primary"> Vinay kumar </span> <br>  From Bhilai</h1>
       </div>
     </div>
   </div>
@@ -33,143 +47,139 @@
 
 <!-------------about-------------------------->
 
-  <div id="about">
-    <div class="container">
-      <div class="row">
-        <div class="about-col-1">
-          <img src="User.jpg">
-
+  <div id="about" class="py-[80px] text-text-gray">
+    <div class="container px-4 md:px-[10%] mx-auto">
+      <div class="flex flex-col sm:flex-row justify-between flex-wrap">
+        <div class="basis-full sm:basis-[35%] mb-5 sm:mb-0">
+          <img src="User.jpg" class="w-full rounded-[15px] hidden md:block">
         </div>
-        <div class="about-col-2">
-          <h1 class="sub-title">About Me</h1>
+        <div class="basis-full sm:basis-[60%] text-sm sm:text-base">
+          <h1 class="text-4xl sm:text-6xl font-semibold text-white mb-4">About Me</h1>
           <p>I am V. Vinay Kumar, a B.Tech graduate in Computer Science and Engineering with expertise in programming languages like Java, HTML, CSS, JavaScript, and React. I have experience in Android Studio and a strong grasp of Data Structures and Algorithms, which aid in efficient problem-solving. <br/> As a fresher, I am eager to learn, contribute to meaningful projects, and grow professionally. Beyond academics, I enjoy video games and movies, which enhance my creativity and strategic thinking. I look forward to leveraging my skills and passions to make a positive impact in the tech industry.</p>
-      <div class="tab-titles">
-        <p class="tab-links  active-link" onclick= "opentab('skills')">Skills </p>
-
-        <p class="tab-links"  onclick="opentab('experience')"> Experience </p>
-        <p class="tab-links" onclick="opentab('education')"> Education</p>
+      <div class="flex mt-5 mb-10">
+        <p class="tab-links active-link mr-5 sm:mr-[50px] text-base sm:text-lg font-medium cursor-pointer relative after:content-[''] after:w-0 after:h-[3px] after:bg-primary after:absolute after:left-0 after:-bottom-[8px] after:transition-all after:duration-500" onclick= "opentab('skills')">Skills </p>
+        <p class="tab-links mr-5 sm:mr-[50px] text-base sm:text-lg font-medium cursor-pointer relative after:content-[''] after:w-0 after:h-[3px] after:bg-primary after:absolute after:left-0 after:-bottom-[8px] after:transition-all after:duration-500"  onclick="opentab('experience')"> Experience </p>
+        <p class="tab-links mr-5 sm:mr-[50px] text-base sm:text-lg font-medium cursor-pointer relative after:content-[''] after:w-0 after:h-[3px] after:bg-primary after:absolute after:left-0 after:-bottom-[8px] after:transition-all after:duration-500" onclick="opentab('education')"> Education</p>
       </div>
       <div class="tab-contents active-tab" id="skills">
         <ul>
-          <li><span>UI/UX</span> <br>Desinging Web/App interfaces</li>
-          <li><span>Web Developmwnt</span> <br> Web app development</li>
-          <li><span>App Developmwnt</span> <br>Building Android/iOS apps</li>
+          <li class="list-none my-2.5"><span class="text-[#b54769] text-sm font-medium">Programming & Databases</span> <br>Java, HTML, CSS, JavaScript, SQL</li>
+          <li class="list-none my-2.5"><span class="text-[#b54769] text-sm font-medium">App Development</span> <br>Building Android apps with Java</li>
+          <li class="list-none my-2.5"><span class="text-[#b54769] text-sm font-medium">Web Development</span> <br>React, Tailwind CSS</li>
         </ul>
       </div>
       
       <div class="tab-contents" id="experience">
         <ul>
-          <li><span>2021</span> <br>Desinging Web/App interfaces Traning at Seeds IT solution</li>
-          <li><span>Web Developmwnt</span> <br> Web app development</li>
-          <li><span>App Developmwnt</span> <br>Building Android/iOS apps</li>
+          <li class="list-none my-2.5"><span class="text-[#b54769] text-sm font-medium">Jun 2023 - Jul 2023</span> <br>App development with Android & Java Training at EICT Academy-IIT, Kanpur</li>
+          <li class="list-none my-2.5"><span class="text-[#b54769] text-sm font-medium">Mar 2021</span> <br>Java Training at SEED IT SOLUTION</li>
         </ul>
       </div>
 
       <div class="tab-contents" id="education">
         <ul>
-          <li><span>2016</span> <br>10th from SREE NARAYANA GURU VIDYA BHAVAN/li>
-          <li><span>2018</span> <br>12th from SREE NARAYANA GURU VIDYA BHAVAN/li>
-          <li><span>2021</span> <br> Diploma form Bhrati science and technology college</li>
-          <li><span>2024</span> <br>b-tech from GEC,bilaspur</li>
+          <li class="list-none my-2.5"><span class="text-[#b54769] text-sm font-medium">Oct 2021 - May 2024</span> <br>B.Tech in Computer Science Engineering, Government Engineering College, Bilaspur</li>
+          <li class="list-none my-2.5"><span class="text-[#b54769] text-sm font-medium">Nov 2019 - May 2021</span> <br>Diploma, Bharti College Of Engineering and Technology, Durg</li>
+          <li class="list-none my-2.5"><span class="text-[#b54769] text-sm font-medium">Mar 2018</span> <br>12th from Sree Narayana Guru Vidhya Bhavan, Bhilai</li>
+          <li class="list-none my-2.5"><span class="text-[#b54769] text-sm font-medium">Mar 2016</span> <br>10th from Sree Narayana Guru Vidhya Bhavan, Bhilai</li>
         </ul>
       </div>
-
 
       </div>
       </div>
     </div>
   </div>
   <!-----------Services------------------>
-<div id="service">
-  <div class ="container">
-  <h1 class="sub-title">My Service</h1>
-<div class="services-list">
-  <div>
-    <i class="fa-solid fa-code"></i>
-    <h2>Web Desinging</h2>
+<div id="service" class="py-[30px]">
+  <div class ="container px-4 md:px-[10%] mx-auto">
+  <h1 class="text-4xl sm:text-6xl font-semibold text-white">My Service</h1>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10 mt-[50px]">
+  <div class="bg-bg-light p-10 text-sm font-light rounded-[10px] transition-all duration-500 hover:bg-primary hover:-translate-y-2.5">
+    <i class="fa-solid fa-code text-5xl mb-[30px]"></i>
+    <h2 class="text-3xl font-medium mb-[15px]">Web Desinging</h2>
     <p> Web Designing: Passionate about creating visually appealing and user-friendly websites using HTML, CSS, JavaScript, jQuery, and React.</p>
-    <a href="#">Learn more</a>
+    <a href="#" class="text-white text-xs mt-5 inline-block no-underline">Learn more</a>
   </div>
 
-  <div>
-    <i class="fa-solid fa-crop"></i>
-    <h2>UI/UX Desinging</h2>
+  <div class="bg-bg-light p-10 text-sm font-light rounded-[10px] transition-all duration-500 hover:bg-primary hover:-translate-y-2.5">
+    <i class="fa-solid fa-crop text-5xl mb-[30px]"></i>
+    <h2 class="text-3xl font-medium mb-[15px]">UI/UX Desinging</h2>
     <p>UI/UX design is a crucial aspect of product development that focuses on creating interfaces and experiences that are visually appealing, intuitive, and user-centric.  </p>
-    <a href="#">Learn more</a>
+    <a href="#" class="text-white text-xs mt-5 inline-block no-underline">Learn more</a>
   </div>
 
-  <div>
-    <i class="fa-brands fa-app-store-ios"></i>
-    <h2>App Desinging</h2>
+  <div class="bg-bg-light p-10 text-sm font-light rounded-[10px] transition-all duration-500 hover:bg-primary hover:-translate-y-2.5">
+    <i class="fa-brands fa-app-store-ios text-5xl mb-[30px]"></i>
+    <h2 class="text-3xl font-medium mb-[15px]">App Desinging</h2>
     <p>By combining your technical skills with a strong understanding of UI/UX principles, you can excel in app designing and create engaging, user-friendly applications that stand out in the competitive app market. </p>
-    <a href="#">Learn more</a>
+    <a href="#" class="text-white text-xs mt-5 inline-block no-underline">Learn more</a>
   </div>
 </div>
 </div>
 </div>
 <!---------------------------------------protfolio-->
-<div id="Portfolio">
-  <div class="container"><h1 class="sub-title"> My Work</h1></div>
+<div id="Portfolio" class="py-[50px]">
+  <div class="container px-4 md:px-[10%] mx-auto"><h1 class="text-4xl sm:text-6xl font-semibold text-white"> My Work</h1></div>
   
-   <div class="work-list">
-    <div class="work"><img src="work-1.png">
-    <div class="layer"><h3>Social Media App</h3>
+   <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10 mt-[50px] container px-4 md:px-[10%] mx-auto">
+    <div class="rounded-[10px] overflow-hidden relative group"><img src="work-1.png" class="w-full rounded-[10px] block transition-transform duration-500 group-hover:scale-110">
+    <div class="w-full h-0 bg-gradient-to-b from-[rgba(0,0,0,0.6)] to-primary rounded-[10px] absolute left-0 bottom-0 overflow-hidden flex items-center justify-center flex-col px-10 text-center text-sm transition-all duration-500 group-hover:h-full"><h3 class="font-medium mb-5 text-lg">Social Media App</h3>
     <p> The app coonects you to the talanted people around the worls download it from play store  </p>
-    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    <a href="#" class="mt-5 text-primary text-lg bg-white w-[60px] h-[60px] rounded-full flex items-center justify-center no-underline"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
     </div>
     </div>
 
-    <div class="work"><img src="work-2.png">
-      <div class="layer"><h3>Music App</h3>
+    <div class="rounded-[10px] overflow-hidden relative group"><img src="work-2.png" class="w-full rounded-[10px] block transition-transform duration-500 group-hover:scale-110">
+      <div class="w-full h-0 bg-gradient-to-b from-[rgba(0,0,0,0.6)] to-primary rounded-[10px] absolute left-0 bottom-0 overflow-hidden flex items-center justify-center flex-col px-10 text-center text-sm transition-all duration-500 group-hover:h-full"><h3 class="font-medium mb-5 text-lg">Music App</h3>
         <p> The app coonects you to the talanted people around the worls download it from play store  </p>
-        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="#" class="mt-5 text-primary text-lg bg-white w-[60px] h-[60px] rounded-full flex items-center justify-center no-underline"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
     </div>
 
-    <div class="work"><img src="work-3.png">
-      <div class="layer"><h3>online shopping App</h3>
+    <div class="rounded-[10px] overflow-hidden relative group"><img src="work-3.png" class="w-full rounded-[10px] block transition-transform duration-500 group-hover:scale-110">
+      <div class="w-full h-0 bg-gradient-to-b from-[rgba(0,0,0,0.6)] to-primary rounded-[10px] absolute left-0 bottom-0 overflow-hidden flex items-center justify-center flex-col px-10 text-center text-sm transition-all duration-500 group-hover:h-full"><h3 class="font-medium mb-5 text-lg">online shopping App</h3>
         <p> The app coonects you to the talanted people around the worls download it from play store  </p>
-        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="#" class="mt-5 text-primary text-lg bg-white w-[60px] h-[60px] rounded-full flex items-center justify-center no-underline"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
     </div>
    
   </div>
-  <a href="#" class="btn">See more</a>
+  <a href="#" class="block mx-auto mt-12 w-fit border border-primary px-12 py-3.5 rounded-md text-white transition-colors duration-500 hover:bg-primary no-underline">See more</a>
 </div>
 <!---------------contact-------------------->
-<div id="contact">
- <div class="container">
-  <div class="row">
-    <div class="contact-left">
-      <h1 class="sub-title">Contact Me</h1>
-      <p><i class="fa-solid fa-paper-plane"></i>vvinaykumar3000@gmail.com</p>
-      <p><i class="fa-solid fa-phone"></i>8319145613</p>
-      <div class="social-icon">
-        <a href="https://www.instagram.com/___vkv____"><i class="fa-brands fa-square-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-facebook"></i></a>
-        <a href=""><i class="fa-brands fa-linkedin"></i></i></a>
-        <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+<div id="contact" class="py-[50px]">
+ <div class="container px-4 md:px-[10%] mx-auto">
+  <div class="flex flex-col sm:flex-row justify-between flex-wrap">
+    <div class="basis-full sm:basis-[35%]">
+      <h1 class="text-4xl sm:text-6xl font-semibold text-white">Contact Me</h1>
+      <p class="mt-[30px]"><i class="fa-solid fa-paper-plane text-primary mr-4 text-2xl"></i>vvinaykumar3000@gmail.com</p>
+      <p class="mt-[30px]"><i class="fa-solid fa-phone text-primary mr-4 text-2xl"></i>8319145613</p>
+      <div class="mt-[30px]">
+        <a href="https://www.instagram.com/___vkv____" class="inline-block text-3xl mr-4 text-text-gray transition-all duration-500 hover:text-primary hover:-translate-y-1"><i class="fa-brands fa-square-instagram"></i></a>
+        <a href="" class="inline-block text-3xl mr-4 text-text-gray transition-all duration-500 hover:text-primary hover:-translate-y-1"><i class="fa-brands fa-facebook"></i></a>
+        <a href="" class="inline-block text-3xl mr-4 text-text-gray transition-all duration-500 hover:text-primary hover:-translate-y-1"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="" class="inline-block text-3xl mr-4 text-text-gray transition-all duration-500 hover:text-primary hover:-translate-y-1"><i class="fa-brands fa-square-instagram"></i></a>
       </div>
-      <a href="Resume.pdf" download class="btn btn2" > download CV</a>
+      <a href="Resume.pdf" download class="inline-block mt-12 w-fit border border-primary bg-primary px-12 py-3.5 rounded-md text-white transition-colors duration-500 hover:bg-transparent no-underline" > download CV</a>
      </div>
-    <div class="contact-right">
-      <form nmae="submit-to-google-sheet">
-        <input type="text" name="Name" placeholder="your name" required>
+    <div class="basis-full sm:basis-[60%] mt-10 sm:mt-0">
+      <form name="submit-to-google-sheet" class="w-full">
+        <input type="text" name="Name" placeholder="your name" required class="w-full border-0 outline-none bg-bg-light p-4 my-4 text-white text-lg rounded-lg">
 
-        <input type="email" name="Email" placeholder="your Email" required>
+        <input type="email" name="Email" placeholder="your Email" required class="w-full border-0 outline-none bg-bg-light p-4 my-4 text-white text-lg rounded-lg">
 
-        <textarea name = "Message " rows="6" placeholder="your Message"></textarea>
+        <textarea name="Message" rows="6" placeholder="your Message" class="w-full border-0 outline-none bg-bg-light p-4 my-4 text-white text-lg rounded-lg"></textarea>
 
-        <button type="submit" class="btn btn2"> Submit </button>
+        <button type="submit" class="inline-block mt-5 cursor-pointer w-fit border border-primary bg-primary px-14 py-3.5 text-lg rounded-md text-white transition-colors duration-500 hover:bg-transparent"> Submit </button>
 
       </form>
-      <span id="msg"></span>
+      <span id="msg" class="text-[#61b752] mt-4 block"></span>
     </div>
   </div>
  </div>
 
-  <div class="copyright">
-    <p>Copyright ©️ vinay.Made by ME<i class="fa-solid fa-heart"></i> </p>
+  <div class="w-full text-center py-6 bg-bg-light font-light mt-5 text-sm sm:text-base">
+    <p>Copyright ©️ vinay.Made by ME<i class="fa-solid fa-heart text-primary ml-2"></i> </p>
   </div>
 
 </div>
